@@ -36,7 +36,7 @@ class TicketSerializer(ModelSerializer):
             'id',
             'start_city',
             'end_city',
-            'desctiption',
+            'description',
             'airline',
             'start_date',
             'end_date',
