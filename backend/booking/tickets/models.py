@@ -12,7 +12,7 @@ class Ticket(models.Model):
     airline = models.ForeignKey('Airline', on_delete=models.CASCADE, related_name='+',
         help_text='Airline of the ticket')
 
-    price = models.DecimalField(max_digits=10, help_text='Price of the ticket')
+    price = models.DecimalField(max_digits=10, decimal_places=2, help_text='Price of the ticket')
 
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
