@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 
@@ -17,9 +17,13 @@ class Ticket(models.Model):
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
-
     def __str__(self):
-        return self.start_city + ' - ' + self.end_city
+        return '{} - {}'.format(self.start_city, self.end_city)
+
+    @property
+    def url_detail(self):
+        return reverse('tickets-api:ticket-detail', args=(self.pk, ))
+
 
 class City(models.Model):
     name = models.CharField(max_length=120)

@@ -40,4 +40,5 @@ class TicketSerializer(ModelSerializer):
             'airline',
             'start_date',
             'end_date',
+            'url_detail',
         ]
