@@ -18,7 +18,8 @@ class Ticket(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
 
-
+    def __str__(self):
+        return self.start_city + ' - ' + self.end_city
 
 class City(models.Model):
     name = models.CharField(max_length=120)
@@ -30,6 +31,8 @@ class City(models.Model):
         verbose_name_plural = 'Cities'
         unique_together = ('name', 'country', )
 
+    def __str__(self):
+        return self.name
 
 
 class Airline(models.Model):
@@ -39,3 +42,6 @@ class Airline(models.Model):
     class Meta:
         verbose_name = 'Airline'
         verbose_name_plural = 'Airlines'
+
+    def __str__(self):
+        return self.name
