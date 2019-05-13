@@ -2,6 +2,6 @@
 venv/
 frontend/node_modules/
 frontend/booking/node_modules/
-
+-r
 .idea/
 .DS_Store
